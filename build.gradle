@@ -43,6 +43,7 @@ pmd{
 
 checkstyle {
     toolVersion '7.8.1'
+    checkstyleTest.enabled = false
     configFile file("config/checkstyle/checkstyle.xml")
 }
 checkstyleMain {
