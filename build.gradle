@@ -58,7 +58,14 @@ checkstyle {
     toolVersion '7.8.1'
     checkstyleTest.enabled = false
     configFile file("config/checkstyle/checkstyle.xml")
+    showViolations = true
     ignoreFailures = true
+}
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
 }
 
 checkstyleMain {
