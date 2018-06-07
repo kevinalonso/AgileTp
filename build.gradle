@@ -6,7 +6,8 @@ apply plugin:'eclipse'
 apply plugin: 'pmd'
 apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
-/*apply plugin: 'jacoco'
+apply plugin: 'jacoco'
+/*apply plugin: 'cpd'
 apply plugin: 'jdepend'*/
 
 // Les endroits pour aller chercher les librairies
@@ -40,23 +41,29 @@ pmd{
     toolVersion = '5.8.1'
     ignoreFailures = true
 }
-
-checkstyle {
-    toolVersion '7.8.1'
-    checkstyleTest.enabled = false
-    configFile file("config/checkstyle/checkstyle.xml")
-}
-checkstyleMain {
-    source ='src/main/jva'
-}
-
-
 tasks.withType(Pmd){
     reports {
         xml.enabled true
         html.enabled true
     }
 }
+
+checkstyle {
+    toolVersion '7.8.1'
+    checkstyleTest.enabled = false
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+
+checkstyleMain {
+    source ='src/main/jva'
+}
+
+jacoco {
+    toolVersion = "0.8.1"
+    reportsDir = file("$buildDir/customJacocoReportDir")
+}
+
+
 
 test{
     ignoreFailures = true
