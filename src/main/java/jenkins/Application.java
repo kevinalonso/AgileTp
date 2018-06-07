@@ -15,7 +15,7 @@ public final class Application {
 	 * Entry point of application.
 	 * @param args argument from CLI.
 	 */
-	public static void main(String[] args) {
+	public static void main(final String[] args) {
 		System.out.println("Hello world");
 		final DateTime date =  new DateTime().now();
 		System.out.println(date);
