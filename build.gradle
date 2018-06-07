@@ -74,6 +74,21 @@ jacocoTestReport {
     }
 }
 
+// CPD
+task cpd {
+    doLast {
+        def cpdOutputDir = new File("${reportDir}/cpd")
+        cpdOutputDir.mkdirs()
+
+        ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
+
+        ant.cpd(minimumTokenCount: '5', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
+            fileset(dir: 'src') {
+                include(name: '**/*.java')
+            }
+        }
+    }
+}
 
 //TEST
 test{
