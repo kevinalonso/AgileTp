@@ -46,11 +46,9 @@ checkstyle {
     //configFile file("config/checkstyle/checkstyle.xml")
 }
 checkstyleMain {
-    source ='src/main/java'
+    source ='src/main/jva'
 }
-checkstyleTest {
-    source ='src/test/java'
-}
+
 
 tasks.withType(Pmd){
     reports {
