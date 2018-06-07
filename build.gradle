@@ -7,8 +7,8 @@ apply plugin: 'pmd'
 apply plugin: 'findbugs'
 apply plugin: 'checkstyle'
 apply plugin: 'jacoco'
-/*apply plugin: 'cpd'
-apply plugin: 'jdepend'*/
+//apply plugin: 'de.aaschmid.cpd'
+apply plugin: 'jdepend'
 
 // Les endroits pour aller chercher les librairies
 repositories{
@@ -22,6 +22,7 @@ dependencies{
 	testCompile 'junit:junit:4.12'
 }
 
+//PMD
 pmd{
     pmdTest.enabled = false
     ruleSets = ["java-basic",
@@ -48,6 +49,7 @@ tasks.withType(Pmd){
     }
 }
 
+//CHECKSTYLE
 checkstyle {
     toolVersion '7.8.1'
     checkstyleTest.enabled = false
@@ -58,13 +60,21 @@ checkstyleMain {
     source ='src/main/jva'
 }
 
+//JACOCO
 jacoco {
     toolVersion = "0.8.1"
     reportsDir = file("$buildDir/customJacocoReportDir")
 }
+jacocoTestReport {
+    reports {
+        xml.enabled false
+        csv.enabled false
+        html.destination file("${buildDir}/jacocoHtml")
+    }
+}
 
 
-
+//TEST
 test{
     ignoreFailures = true
 }
