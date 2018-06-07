@@ -4,7 +4,10 @@ apply plugin:'java'
 //For eclipse
 apply plugin:'eclipse'
 apply plugin: 'pmd'
-apply plugin: 'findbugs'
+/*apply plugin: 'findbugs'
+apply plugin: 'checkstyle'
+apply plugin: 'jacoco'
+apply plugin: 'jdepend'*/
 
 // Les endroits pour aller chercher les librairies
 repositories{
