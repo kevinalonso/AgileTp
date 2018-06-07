@@ -5,8 +5,12 @@ import org.joda.time.DateTime;
  * My main class.
  * @author kevin-pc.
  */
-public class Application {
+public final class Application {
 
+	private Application() {
+		
+	}
+	
 	/**
 	 * Entry point of application.
 	 * @param args argument from CLI.
