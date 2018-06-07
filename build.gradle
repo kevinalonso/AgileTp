@@ -54,6 +54,7 @@ checkstyle {
     toolVersion '7.8.1'
     checkstyleTest.enabled = false
     configFile file("config/checkstyle/checkstyle.xml")
+     ignoreFailures = true
 }
 
 checkstyleMain {
@@ -64,6 +65,7 @@ checkstyleMain {
 jacoco {
     toolVersion = "0.8.1"
     reportsDir = file("$buildDir/customJacocoReportDir")
+     ignoreFailures = true
 }
 jacocoTestReport {
     reports {
