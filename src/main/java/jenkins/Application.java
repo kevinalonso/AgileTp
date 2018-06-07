@@ -5,13 +5,13 @@ import org.joda.time.DateTime;
  * My main class.
  * @author kevin-pc.
  */
-public class Application{
+public class Application {
 
 	/**
 	 * Entry point of application.
 	 * @param args argument from CLI.
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		System.out.println("Hello world");
 		DateTime date =  new DateTime().now();
 		System.out.println(date);
@@ -19,11 +19,11 @@ public class Application{
 	
 	/**
 	 * Resolve addition.
-	 * @param i first integer.
-	 * @param j second integer.
+	 * @param firstValue first integer.
+	 * @param secondValue second integer.
 	 * @return result of addition.
 	 */
-	public static int add(int i, int j) {
-		return i + j;
+	public static int add(int firstValue, int secondValue) {
+		return firstValue + secondValue;
 	}
 }
