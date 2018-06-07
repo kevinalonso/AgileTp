@@ -4,6 +4,7 @@ apply plugin:'java'
 //For eclipse
 apply plugin:'eclipse'
 apply plugin: 'pmd'
+apply plugin: 'findbugs'
 
 // Les endroits pour aller chercher les librairies
 repositories{
