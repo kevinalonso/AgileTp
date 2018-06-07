@@ -10,6 +10,10 @@ apply plugin: 'jacoco'
 //apply plugin: 'de.aaschmid.cpd'
 apply plugin: 'jdepend'
 
+def gradleExtra="${project.rootDir}/gradle/script"
+def reportDir="${project.buildDir}/reports"
+check.dependsOn 'cpd'
+
 // Les endroits pour aller chercher les librairies
 repositories{
 	mavenCentral()
@@ -82,7 +86,7 @@ task cpd {
 
         ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
 
-        ant.cpd(minimumTokenCount: '5', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
+        ant.cpd(minimumTokenCount: '20', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
             fileset(dir: 'src') {
                 include(name: '**/*.java')
             }
