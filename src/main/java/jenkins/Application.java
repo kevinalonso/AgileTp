@@ -27,7 +27,7 @@ public final class Application {
 	 * @param secondValue second integer.
 	 * @return result of addition.
 	 */
-	public static int add(int firstValue, int secondValue) {
+	public static int add(final int firstValue, final int secondValue) {
 		return firstValue + secondValue;
 	}
 }
