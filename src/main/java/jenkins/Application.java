@@ -8,7 +8,7 @@ import org.joda.time.DateTime;
 public final class Application {
 
 	private Application() {
-		
+		super();
 	}
 	
 	/**
@@ -17,7 +17,7 @@ public final class Application {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Hello world");
-		DateTime date =  new DateTime().now();
+		final DateTime date =  new DateTime().now();
 		System.out.println(date);
 	}
 	
